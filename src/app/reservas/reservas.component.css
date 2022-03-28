@@ -1,0 +1,33 @@
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+}
+.campo__label {
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+.formularios {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem auto;
+}
+.btn {
+    display: flex;
+    align-items: center;
+}
+.boton {
+    width: 20%;
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    margin: 2rem auto;
+}
+.boton:hover {
+    background-color: aqua;
+}

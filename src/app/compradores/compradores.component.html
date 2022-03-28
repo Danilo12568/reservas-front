@@ -1,0 +1,40 @@
+<div class="contenedor">
+    <div class="barra">
+        <a class="logo" href="index.html">
+            <h1 class="logo__nombre no-margin centrar-texto">Registro de compradores</h1>
+        </a>
+
+        <nav class="navegacion">
+            <a routerLink="/eventos" class="navegacion___enlace">Eventos</a>
+            <a routerLink="/reservas" class="navegacion___enlace">Reservas</a>
+            <a routerLink="/compradores" class="navegacion___enlace">Compradores</a>
+        </nav>
+    </div>
+    <div class="registro">
+        <form class="formulario" [formGroup]="formulario">
+            <div class="campo">
+                <label class="campo__label" for="identificacion">Identificación:</label>
+                <input autocomplete="off" required class="form-control" type="text" placeholder="Identificación"
+                    formControlName="identificacion" id="identificacion">
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="nombre">Nombre:</label>
+                <input autocomplete="off" required class="form-control" type="text" placeholder="Nombre"
+                    formControlName="nombre" id="nombre">
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="email">Correo:</label>
+                <input autocomplete="off" required class="form-control" type="email" placeholder="Correo"
+                    formControlName="correo" id="email">
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="telefono">Telefono:</label>
+                <input autocomplete="off" required class="form-control" type="text" placeholder="Telefono"
+                    formControlName="telefono" id="telefono">
+            </div>
+            <div>
+                <button (click)="guardarComprador()">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

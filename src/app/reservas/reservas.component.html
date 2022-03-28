@@ -1,0 +1,87 @@
+<div class="contenedor">
+    <div class="barra">
+        <a class="logo" href="index.html">
+            <h1 class="logo__nombre no-margin centrar-texto">Registro de reservas</h1>
+        </a>
+
+        <nav class="navegacion">
+            <a routerLink="/eventos" class="navegacion___enlace">Eventos</a>
+            <a routerLink="/reservas" class="navegacion___enlace">Reservas</a>
+            <a routerLink="/compradores" class="navegacion___enlace">Compradores</a>
+        </nav>
+    </div>
+    <div class="registro">
+        <div class="formularios">
+            <form [formGroup]="formularioEvento">
+                <div class="campo">
+                    <label class="campo__label" for="buscar-evento">Buscar:</label>
+                    <input autocomplete="off" class="form-control" type="text" placeholder="Buscar evento" id="buscar" #filter
+                    list="eventos" (change)="autocompletarEvento($any($event.target).value)">
+                    <datalist id="eventos">
+                        <ng-container *ngFor="let evento of eventos; let i = index">
+                            <option>{{ evento.descripcion }}</option>
+                        </ng-container>
+                    </datalist>
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="descripcion">Descripción:</label>
+                    <input autocomplete="off" required class="form-control" type="text" placeholder="Descripción"
+                        formControlName="descripcion" id="descripcion">
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="lugar">Lugar:</label>
+                    <input autocomplete="off" required class="form-control" type="text" placeholder="Lugar"
+                        formControlName="lugar" id="lugar">
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="fecha">Fecha:</label>
+                    <input autocomplete="off" required class="form-control" type="date" placeholder="Fecha"
+                    formControlName="fecha" id="fecha">
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="boletas_disponibles">Boletas disponibles:</label>
+                    <input autocomplete="off" required class="form-control" type="number" placeholder="Boletas disponibles"
+                        formControlName="boletas_disponibles" id="boletas_disponibles">
+                </div>
+            </form>
+    
+            <form [formGroup]="formularioComprador">
+                <div class="campo">
+                    <label class="campo__label" for="buscar-comprador">Buscar:</label>
+                    <input autocomplete="off" class="form-control" type="text" placeholder="Buscar comprador" id="buscar" #filter
+                    list="compradores" (change)="autocompletarComprador($any($event.target).value)">
+                    <datalist id="compradores">
+                        <ng-container *ngFor="let comprador of compradores; let i = index">
+                            <option value="{{comprador.identificacion}}">{{ comprador.nombre }}</option>
+                        </ng-container>
+                    </datalist>
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="identificacion">Identificación:</label>
+                    <input autocomplete="off" required class="form-control" type="text" placeholder="Identificación"
+                        formControlName="identificacion" id="identificacion">
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="nombre">Nombre:</label>
+                    <input autocomplete="off" required class="form-control" type="text" placeholder="Nombre"
+                        formControlName="nombre" id="nombre">
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="email">Correo:</label>
+                    <input autocomplete="off" required class="form-control" type="email" placeholder="Correo"
+                        formControlName="correo" id="email">
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="telefono">Telefono:</label>
+                    <input autocomplete="off" required class="form-control" type="text" placeholder="Telefono"
+                        formControlName="telefono" id="telefono">
+                </div>
+            </form>
+
+        </div>
+        <div class="btn">
+            <button class="boton" (click)="guardarReserva()">Guardar</button>
+        </div>
+    </div>
+
+</div>
