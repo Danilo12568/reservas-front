@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EventosService } from './services/eventos.service';
 
+// Alertify
+declare let alertify: any;
+
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
@@ -26,14 +29,14 @@ export class EventosComponent implements OnInit {
       descripcion: ['', [Validators.required]],
       lugar: ['', [Validators.required]],
       fecha: ['', [Validators.required]],
-      cantidad_boletas: ['', [Validators.required]],
+      boletas: ['', [Validators.required]],
     });
   }
 
   guardarEvento = () => {
     console.log(this.formulario.value);
     this.eventosService.guardarEvento(this.formulario.value).subscribe(res => {
-      alert('Listo');
+      alertify.success('Se guardaron el evento exitosamente');
     });
   }
 

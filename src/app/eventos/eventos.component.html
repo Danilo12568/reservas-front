@@ -1,39 +1,43 @@
 <div class="contenedor">
     <div class="barra">
         <a class="logo" href="index.html">
-            <h1 class="logo__nombre no-margin centrar-texto">Registro de eventos</h1>
+            <h2 class="logo__nombre no-margin centrar-texto">-.-</h2>
         </a>
 
         <nav class="navegacion">
             <a routerLink="/eventos" class="navegacion___enlace">Eventos</a>
             <a routerLink="/reservas" class="navegacion___enlace">Reservas</a>
-            <a routerLink="/compradores" class="navegacion___enlace">Compradores</a>
+            <a routerLink="/compradores" class="navegacion___enlace">Clientes</a>
         </nav>
     </div>
     <div class="registro">
-        <form class="formulario" [formGroup]="formulario">
+        <form [formGroup]="formulario">
+
+            <h3 class="titulo">Registro de eventos</h3>
+
             <div class="campo">
                 <label class="campo__label" for="descripcion">Descripción:</label>
-                <input autocomplete="off" required class="form-control" type="text" placeholder="Descripción"
+                <input autocomplete="off" required class="campo__input" type="text" placeholder="Descripción"
                     formControlName="descripcion" id="descripcion">
             </div>
             <div class="campo">
                 <label class="campo__label" for="lugar">Lugar:</label>
-                <input autocomplete="off" required class="form-control" type="text" placeholder="Lugar"
+                <input autocomplete="off" required class="campo__input" type="text" placeholder="Lugar"
                     formControlName="lugar" id="lugar">
             </div>
             <div class="campo">
                 <label class="campo__label" for="fecha">Fecha:</label>
-                <input autocomplete="off" required class="form-control" type="date" placeholder="Fecha"
+                <input autocomplete="off" required class="campo__input" type="date" placeholder="Fecha"
                     formControlName="fecha" id="fecha">
             </div>
             <div class="campo">
-                <label class="campo__label" for="cantidad_boletas">Boletas totales:</label>
-                <input autocomplete="off" required class="form-control" type="number" placeholder="Cantidad total de boletas"
-                    formControlName="cantidad_boletas" id="cantidad_boletas">
+                <label class="campo__label" for="boletas">Boletas:</label>
+                <input autocomplete="off" required class="campo__input" type="number"
+                    placeholder="Cantidad total de boletas" formControlName="boletas" id="boletas">
             </div>
-            <div>
-                <button (click)="guardarEvento()">Guardar</button>
+
+            <div class="btn">
+                <button class="boton" (click)="guardarEvento()">Guardar</button>
             </div>
         </form>
     </div>

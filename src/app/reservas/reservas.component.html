@@ -1,80 +1,92 @@
 <div class="contenedor">
     <div class="barra">
         <a class="logo" href="index.html">
-            <h1 class="logo__nombre no-margin centrar-texto">Registro de reservas</h1>
+            <h2 class="logo__nombre no-margin centrar-texto">-.-</h2>
         </a>
 
         <nav class="navegacion">
             <a routerLink="/eventos" class="navegacion___enlace">Eventos</a>
             <a routerLink="/reservas" class="navegacion___enlace">Reservas</a>
-            <a routerLink="/compradores" class="navegacion___enlace">Compradores</a>
+            <a routerLink="/compradores" class="navegacion___enlace">Clientes</a>
         </nav>
     </div>
     <div class="registro">
+    
+        <h3 class="titulo">Registro de eventos</h3>
+
         <div class="formularios">
             <form [formGroup]="formularioEvento">
+                <h3 class="titulo">Consulte el evento</h3>
                 <div class="campo">
                     <label class="campo__label" for="buscar-evento">Buscar:</label>
-                    <input autocomplete="off" class="form-control" type="text" placeholder="Buscar evento" id="buscar" #filter
-                    list="eventos" (change)="autocompletarEvento($any($event.target).value)">
+                    <input autocomplete="off" class="campo__input" type="text" placeholder="Buscar evento" id="buscar"
+                        #filter list="eventos" (change)="autocompletarEvento($any($event.target).value)">
                     <datalist id="eventos">
                         <ng-container *ngFor="let evento of eventos; let i = index">
-                            <option>{{ evento.descripcion }}</option>
+                            <option>{{ evento.id_evento + '. ' + evento.descripcion }}</option>
                         </ng-container>
                     </datalist>
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="descripcion">Descripción:</label>
-                    <input autocomplete="off" required class="form-control" type="text" placeholder="Descripción"
+                    <input autocomplete="off" required class="campo__input" type="text" placeholder="Descripción"
                         formControlName="descripcion" id="descripcion">
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="lugar">Lugar:</label>
-                    <input autocomplete="off" required class="form-control" type="text" placeholder="Lugar"
+                    <input autocomplete="off" required class="campo__input" type="text" placeholder="Lugar"
                         formControlName="lugar" id="lugar">
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="fecha">Fecha:</label>
-                    <input autocomplete="off" required class="form-control" type="date" placeholder="Fecha"
-                    formControlName="fecha" id="fecha">
+                    <input autocomplete="off" required class="campo__input" type="date" placeholder="Fecha"
+                        formControlName="fecha" id="fecha">
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="boletas_disponibles">Boletas disponibles:</label>
-                    <input autocomplete="off" required class="form-control" type="number" placeholder="Boletas disponibles"
-                        formControlName="boletas_disponibles" id="boletas_disponibles">
+                    <input autocomplete="off" required class="campo__input" type="number"
+                        placeholder="Boletas disponibles" formControlName="boletas_disponibles"
+                        id="boletas_disponibles">
                 </div>
             </form>
-    
+
             <form [formGroup]="formularioComprador">
+                <h3 class="titulo">Consulte el cliente</h3>
                 <div class="campo">
                     <label class="campo__label" for="buscar-comprador">Buscar:</label>
-                    <input autocomplete="off" class="form-control" type="text" placeholder="Buscar comprador" id="buscar" #filter
-                    list="compradores" (change)="autocompletarComprador($any($event.target).value)">
+                    <input autocomplete="off" class="campo__input" type="text" placeholder="Buscar comprador"
+                        id="buscar" #filter list="compradores"
+                        (change)="autocompletarComprador($any($event.target).value)">
                     <datalist id="compradores">
                         <ng-container *ngFor="let comprador of compradores; let i = index">
                             <option value="{{comprador.identificacion}}">{{ comprador.nombre }}</option>
                         </ng-container>
                     </datalist>
                 </div>
-                <div class="campo">
+                <!-- <div class="campo">
                     <label class="campo__label" for="identificacion">Identificación:</label>
-                    <input autocomplete="off" required class="form-control" type="text" placeholder="Identificación"
+                    <input autocomplete="off" required class="campo__input" type="text" placeholder="Identificación"
                         formControlName="identificacion" id="identificacion">
-                </div>
+                </div> -->
                 <div class="campo">
                     <label class="campo__label" for="nombre">Nombre:</label>
-                    <input autocomplete="off" required class="form-control" type="text" placeholder="Nombre"
+                    <input autocomplete="off" required class="campo__input" type="text" placeholder="Nombre"
                         formControlName="nombre" id="nombre">
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="email">Correo:</label>
-                    <input autocomplete="off" required class="form-control" type="email" placeholder="Correo"
+                    <input autocomplete="off" required class="campo__input" type="email" placeholder="Correo"
                         formControlName="correo" id="email">
                 </div>
                 <div class="campo">
                     <label class="campo__label" for="telefono">Telefono:</label>
-                    <input autocomplete="off" required class="form-control" type="text" placeholder="Telefono"
+                    <input autocomplete="off" required class="campo__input" type="text" placeholder="Telefono"
                         formControlName="telefono" id="telefono">
+                </div>
+                <div class="campo">
+                    <label class="campo__label" for="nro_boletas">Numero de boletas que va comprar:</label>
+                    <input autocomplete="off" required class="campo__input" type="text" placeholder="Numero de boletas"
+                        formControlName="nro_boletas" id="nro_boletas">
                 </div>
             </form>
 

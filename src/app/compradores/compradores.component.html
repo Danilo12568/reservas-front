@@ -1,39 +1,42 @@
 <div class="contenedor">
     <div class="barra">
         <a class="logo" href="index.html">
-            <h1 class="logo__nombre no-margin centrar-texto">Registro de compradores</h1>
+            <h2 class="logo__nombre no-margin centrar-texto">-.-</h2>
         </a>
 
         <nav class="navegacion">
             <a routerLink="/eventos" class="navegacion___enlace">Eventos</a>
             <a routerLink="/reservas" class="navegacion___enlace">Reservas</a>
-            <a routerLink="/compradores" class="navegacion___enlace">Compradores</a>
+            <a routerLink="/compradores" class="navegacion___enlace">Clientes</a>
         </nav>
     </div>
     <div class="registro">
-        <form class="formulario" [formGroup]="formulario">
+        <form [formGroup]="formulario">
+
+            <h3 class="titulo">Registro de clientes</h3>
+
             <div class="campo">
                 <label class="campo__label" for="identificacion">Identificación:</label>
-                <input autocomplete="off" required class="form-control" type="text" placeholder="Identificación"
+                <input autocomplete="off" required class="campo__input" type="text" placeholder="Identificación"
                     formControlName="identificacion" id="identificacion">
             </div>
             <div class="campo">
                 <label class="campo__label" for="nombre">Nombre:</label>
-                <input autocomplete="off" required class="form-control" type="text" placeholder="Nombre"
+                <input autocomplete="off" required class="campo__input" type="text" placeholder="Nombre"
                     formControlName="nombre" id="nombre">
             </div>
             <div class="campo">
                 <label class="campo__label" for="email">Correo:</label>
-                <input autocomplete="off" required class="form-control" type="email" placeholder="Correo"
+                <input autocomplete="off" required class="campo__input" type="email" placeholder="Correo"
                     formControlName="correo" id="email">
             </div>
             <div class="campo">
                 <label class="campo__label" for="telefono">Telefono:</label>
-                <input autocomplete="off" required class="form-control" type="text" placeholder="Telefono"
+                <input autocomplete="off" required class="campo__input" type="text" placeholder="Telefono"
                     formControlName="telefono" id="telefono">
             </div>
-            <div>
-                <button (click)="guardarComprador()">Guardar</button>
+            <div class="btn">
+                <button class="boton" (click)="guardarComprador()">Guardar</button>
             </div>
         </form>
     </div>

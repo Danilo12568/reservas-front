@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CompradoresService } from './services/compradores.service';
 
+// Alertify
+declare let alertify: any;
+
 @Component({
   selector: 'app-compradores',
   templateUrl: './compradores.component.html',
@@ -32,7 +35,7 @@ export class CompradoresComponent implements OnInit {
 
   guardarComprador = () => {
     this.compradoresService.guardarComprador(this.formulario.value).subscribe(res => {
-      alert ('Listo');
+      alertify.success('Se guardaron los datos del cliente exitosamente');
     });
   }
 

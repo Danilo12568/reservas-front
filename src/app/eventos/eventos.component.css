@@ -1,11 +1,38 @@
 
-
+.registro {
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    padding: 2rem;
+    align-items: center;
+}
 .campo {
     display: flex;
-    margin-bottom: 2rem;
+    flex-direction: column;
 }
 .campo__label {
-    flex: 0 0 9rem;
-    text-align: right;
-    padding-right: 2rem;
+    font-size: 1.3rem;
+}
+.campo__input {
+    font-family: 'Merienda', cursive;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    border-radius: .3rem;
+}
+.btn {
+    display: flex;
+}
+.boton {
+    width: 20%;
+    margin: 1rem auto 0;
+    border-radius: .3rem;
+    font-family: 'Merienda', cursive;
+    padding: .7rem 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+.boton:hover {
+    background-color: mediumspringgreen;
 }

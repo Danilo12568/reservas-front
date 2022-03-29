@@ -13,7 +13,8 @@ html {
     box-sizing: inherit;
 }
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Merienda', cursive;
+    color: #000000;
     font: 1.6rem;
     line-height: 2;
 }
@@ -23,7 +24,7 @@ body {
 
 /** Globales **/
 .contenedor {
-    max-width: 120rem;
+    max-width: 80rem;
     width: 90%;
     margin: 0 auto;
 }
@@ -31,7 +32,7 @@ a {
     text-decoration: none;
 }
 h1, h2, h3, h4 {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Merienda', cursive;
     line-height: 1.2;
 }
 h1 {
@@ -63,13 +64,17 @@ p {
 .centrar-texto {
     text-align: center;
 }
+.titulo {
+    margin: 0 0 2rem 0;
+}
 
 .barra {
-    border: 1px solid black;
+    background-image: url('assets/img/nosotros.jpg');
     padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 10rem;
 }
 .logo {
     color: black;
@@ -89,11 +94,12 @@ p {
     text-align: center;
     font-size: 1.8rem;
     color: black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: .2rem 1.5rem;
 }
-.registro {
-    border: 1px solid black;
-    padding: 2rem;
-    align-items: center;
+.navegacion___enlace:hover {
+    border-color: mediumspringgreen;
 }
 
 

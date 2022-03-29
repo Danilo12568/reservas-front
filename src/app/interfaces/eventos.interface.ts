@@ -3,6 +3,5 @@ export interface Eventos {
     descripcion: string;
     lugar: string;
     fecha: Date;
-    cantidad_boletas: number;
-    boletas_disponibles: number;
+    boletas: number;
 }
