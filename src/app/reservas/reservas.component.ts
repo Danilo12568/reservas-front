@@ -102,6 +102,8 @@ export class ReservasComponent implements OnInit {
       this.formularioComprador.get('nombre')?.disable();
       this.formularioComprador.get('correo')?.disable();
       this.formularioComprador.get('telefono')?.disable();
+      this.initFormEvento();
+      this.initFormComprador();
       alert('Guardado');
     });
   }
